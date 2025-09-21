@@ -2,6 +2,7 @@
   "name": "phantom-forge-robotics",
   "version": "1.0.0",
   "description": "Innovative robotics showcase featuring Drone, AUV, and ROV dashboards",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
