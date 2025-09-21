@@ -1,0 +1,111 @@
+name: 🚀 Deploy PHANTOM FORGE
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    name: 🏗️ Build and Test
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - name: 📚 Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: 🟢 Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - name: 📦 Install dependencies
+      run: npm ci
+      
+    - name: 🔍 Run linter
+      run: npm run lint --if-present
+      
+    - name: 🏗️ Build project
+      run: npm run build
+      env:
+        NODE_ENV: production
+        VITE_APP_NAME: "Phantom Forge - Advanced Robotics"
+        VITE_TEAM_NAME: "Team Phantom Forge"
+        VITE_ORGANIZATION: "Dreams of Bangladesh"
+        VITE_GITHUB_REPO: "https://github.com/tamimhossain11/PHANTOM_FORGE.git"
+        
+    - name: 🧪 Run tests
+      run: npm test --if-present
+      
+    - name: 📤 Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-files-${{ matrix.node-version }}
+        path: dist/
+
+  deploy:
+    name: 🌐 Deploy to Production
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+    - name: 📚 Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        
+    - name: 📦 Install dependencies
+      run: npm ci
+      
+    - name: 🏗️ Build for production
+      run: npm run build
+      env:
+        NODE_ENV: production
+        VITE_APP_NAME: "Phantom Forge - Advanced Robotics"
+        VITE_APP_VERSION: "1.0.0"
+        VITE_TEAM_NAME: "Team Phantom Forge"
+        VITE_ORGANIZATION: "Dreams of Bangladesh"
+        VITE_COMPETITION: "7th World Invention Competition and Exhibition"
+        VITE_DRONE_NAME: "Diganta Prohori"
+        VITE_AUV_NAME: "HydroJan 0.4"
+        VITE_ROV_NAME: "Dingi"
+        VITE_PROJECT_TITLE: "Smart Flood Management System"
+        VITE_GITHUB_REPO: "https://github.com/tamimhossain11/PHANTOM_FORGE.git"
+        VITE_ENABLE_TELEMETRY_SIMULATION: "true"
+        VITE_ENABLE_GLASS_EFFECTS: "true"
+        
+    - name: 🚀 Deploy to Vercel
+      uses: vercel/action@v1
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+        vercel-args: '--prod'
+
+  lighthouse:
+    name: 🔍 Lighthouse Audit
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+    - name: 📚 Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: 🔍 Run Lighthouse CI
+      uses: treosh/lighthouse-ci-action@v10
+      with:
+        configPath: './lighthouserc.json'
+        uploadArtifacts: true
+        temporaryPublicStorage: true
