@@ -109,3 +109,5 @@ jobs:
         configPath: './lighthouserc.json'
         uploadArtifacts: true
         temporaryPublicStorage: true
+
+

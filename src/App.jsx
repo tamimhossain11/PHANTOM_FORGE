@@ -8,6 +8,7 @@ import AUVDashboard from './pages/AUVDashboard'
 import ROVDashboard from './pages/ROVDashboard'
 import AboutPage from './pages/AboutPage'
 import BlogPage from './pages/BlogPage'
+import MediaGallery from './pages/MediaGallery'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/rov" element={<ROVDashboard />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/gallery" element={<MediaGallery />} />
           </Routes>
         </motion.div>
       </div>

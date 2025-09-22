@@ -12,6 +12,7 @@ const Navbar = () => {
     { name: 'Drone', path: '/drone' },
     { name: 'AUV', path: '/auv' },
     { name: 'ROV', path: '/rov' },
+    { name: 'Gallery', path: '/gallery' },
     { name: 'About', path: '/about' },
     { name: 'Blog', path: '/blog' },
   ]

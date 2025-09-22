@@ -41,6 +41,28 @@ const BlogPage = () => {
   const blogPosts = [
     {
       id: 1,
+      title: "Behind the Scenes: Lab Sessions & Testing",
+      subtitle: "Exclusive look at our development process",
+      date: "2 February 2025",
+      readTime: "5 min read",
+      category: "Lab Sessions",
+      icon: Wrench,
+      gradient: "from-green-400 to-emerald-600",
+      content: [
+        "Ever wondered what goes on behind the scenes when we're developing our Smart Flood Management System? Our lab sessions are where the magic happens - where ideas transform into reality through countless hours of dedication, problem-solving, and teamwork.",
+        "**The Assembly Process**",
+        "Each robot begins as individual components carefully selected for their specific roles. Watch our team meticulously assembling Diganta Prohori's hexacopter frame, integrating the Pixhawk 6C controller, and calibrating each sensor. Every connection matters, every calibration is crucial.",
+        "**Testing and Validation**",
+        "Before any robot sees real-world deployment, it undergoes rigorous testing in controlled environments. Our testing videos showcase HydroJan 0.4's underwater navigation capabilities, Dingi's rescue operations, and Diganta Prohori's aerial surveillance missions.",
+        "**Team Collaboration**",
+        "What makes these sessions special isn't just the technology - it's the people. Our lab videos capture the collaborative spirit that drives innovation. From brainstorming solutions to celebrating breakthroughs, every moment reflects our commitment to making a difference.",
+        "**Real Impact**",
+        "These aren't just development exercises. Every test, every calibration, every late-night debugging session brings us closer to saving lives during floods. The footage in our gallery shows the determination behind every component, every line of code, every successful test run.",
+        "Visit our Media Gallery to see exclusive lab footage, testing videos, and behind-the-scenes moments that showcase our journey from concept to competition-ready robots."
+      ]
+    },
+    {
+      id: 2,
       title: "Tick. Tock. Tick… Boom!",
       subtitle: "The Story of Our First Flight",
       date: "16 May 2025",
@@ -349,3 +371,4 @@ const BlogPage = () => {
 }
 
 export default BlogPage
+

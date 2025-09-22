@@ -309,36 +309,56 @@ const DroneDashboard = () => {
               </div>
               
               <div className="aspect-video bg-black/50 rounded-lg relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10">
+                {/* Background Image/Video based on camera mode */}
+                <div className="absolute inset-0">
+                  {cameraMode === 'normal' && (
+                    <img 
+                      src="/src/images/img-6.jpeg" 
+                      alt="Drone Camera Feed" 
+                      className="w-full h-full object-cover opacity-70"
+                    />
+                  )}
+                  {cameraMode === 'thermal' && (
+                    <img 
+                      src="/src/images/img-10.jpeg" 
+                      alt="Thermal Camera Feed" 
+                      className="w-full h-full object-cover opacity-60 filter hue-rotate-180"
+                    />
+                  )}
+                  {cameraMode === 'night' && (
+                    <img 
+                      src="/src/images/img-11.jpeg" 
+                      alt="Night Vision Feed" 
+                      className="w-full h-full object-cover opacity-50 filter grayscale contrast-125"
+                    />
+                  )}
+                </div>
+                
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20">
                   <div className="absolute inset-4 border border-cyan-500/30 rounded">
-                    <div className="absolute top-2 left-2 text-cyan-400 text-xs font-mono">
+                    <div className="absolute top-2 left-2 text-cyan-400 text-xs font-mono bg-black/50 px-2 py-1 rounded">
                       {cameraMode.toUpperCase()} MODE
                     </div>
-                    <div className="absolute top-2 right-2 text-cyan-400 text-xs font-mono">
+                    <div className="absolute top-2 right-2 text-cyan-400 text-xs font-mono bg-black/50 px-2 py-1 rounded">
                       REC ●
                     </div>
-                    <div className="absolute bottom-2 left-2 text-cyan-400 text-xs font-mono">
+                    <div className="absolute bottom-2 left-2 text-cyan-400 text-xs font-mono bg-black/50 px-2 py-1 rounded">
                       ALT: {altitude.toFixed(1)}m
                     </div>
-                    <div className="absolute bottom-2 right-2 text-cyan-400 text-xs font-mono">
+                    <div className="absolute bottom-2 right-2 text-cyan-400 text-xs font-mono bg-black/50 px-2 py-1 rounded">
                       {new Date().toLocaleTimeString()}
                     </div>
                   </div>
                 </div>
-                <motion.div
-                  animate={{
-                    scale: [1, 1.02, 1],
-                    opacity: [0.7, 1, 0.7]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: 'easeInOut'
-                  }}
-                  className="absolute inset-0 flex items-center justify-center"
-                >
-                  <Eye className="w-16 h-16 text-cyan-400/50" />
-                </motion.div>
+                
+                {/* Crosshair overlay */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="relative">
+                    <div className="w-8 h-0.5 bg-cyan-400/70 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    <div className="w-0.5 h-8 bg-cyan-400/70 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    <div className="w-16 h-16 border border-cyan-400/50 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                  </div>
+                </div>
               </div>
             </motion.div>
 

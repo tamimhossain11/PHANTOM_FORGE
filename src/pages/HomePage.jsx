@@ -325,6 +325,123 @@ const HomePage = () => {
           </div>
         </div>
       </motion.section>
+
+      {/* Media Showcase Section */}
+      <motion.section
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="py-20 px-4 bg-card-bg/10"
+      >
+        <div className="max-w-7xl mx-auto">
+          <motion.div variants={itemVariants} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-cyber font-bold mb-6 glow-text text-cyber-blue">
+              PROJECT SHOWCASE
+            </h2>
+            <p className="text-lg text-gray-300 font-display max-w-3xl mx-auto leading-relaxed">
+              Witness our journey from concept to reality through lab sessions, testing phases, and breakthrough moments.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Featured Video */}
+            <motion.div
+              variants={itemVariants}
+              className="lg:col-span-2 glass-card rounded-xl overflow-hidden border border-cyan-500/30 group"
+            >
+              <div className="relative aspect-video bg-gray-900/50 overflow-hidden">
+                <video 
+                  className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                  poster="/src/images/img-1.jpeg"
+                  controls
+                  muted
+                >
+                  <source src="/src/images/vid-1.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors pointer-events-none" />
+                <div className="absolute top-4 left-4">
+                  <div className="px-3 py-1 rounded-full text-xs font-display font-medium bg-red-500/80 text-white">
+                    LAB SESSION
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-cyber font-bold text-white mb-2">
+                  Drone Development Lab Session
+                </h3>
+                <p className="text-gray-400 font-display mb-4">
+                  Behind-the-scenes look at our team assembling and calibrating the Diganta Prohori surveillance drone in our robotics lab.
+                </p>
+                <Link 
+                  to="/gallery"
+                  className="inline-flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 font-display font-medium transition-colors"
+                >
+                  <span>View All Media</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Featured Images */}
+            <motion.div variants={itemVariants} className="space-y-8">
+              <div className="glass-card rounded-xl overflow-hidden border border-purple-500/30 group">
+                <div className="relative aspect-square bg-gray-900/50 overflow-hidden">
+                  <img 
+                    src="/src/images/img-6.jpeg" 
+                    alt="Diganta Prohori Drone"
+                    className="w-full h-full object-cover transition-transform group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="text-white font-cyber font-bold text-lg">Diganta Prohori</div>
+                    <div className="text-gray-300 font-display text-sm">Surveillance Drone</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="glass-card rounded-xl overflow-hidden border border-indigo-500/30 group">
+                <div className="relative aspect-square bg-gray-900/50 overflow-hidden">
+                  <img 
+                    src="/src/images/img-7.jpeg" 
+                    alt="HydroJan 0.4 AUV"
+                    className="w-full h-full object-cover transition-transform group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="text-white font-cyber font-bold text-lg">HydroJan 0.4</div>
+                    <div className="text-gray-300 font-display text-sm">Underwater Vehicle</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Quick Stats */}
+          <motion.div
+            variants={itemVariants}
+            className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6"
+          >
+            {[
+              { label: 'Lab Sessions', value: '50+', icon: '🔬' },
+              { label: 'Test Videos', value: '25+', icon: '🎥' },
+              { label: 'Project Images', value: '100+', icon: '📸' },
+              { label: 'Development Hours', value: '500+', icon: '⏱️' }
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="text-center p-6 glass-card rounded-xl border border-gray-700/30"
+              >
+                <div className="text-3xl mb-2">{stat.icon}</div>
+                <div className="text-2xl font-cyber font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-gray-400 font-display text-sm">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </motion.section>
     </div>
   )
 }

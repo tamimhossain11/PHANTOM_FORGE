@@ -286,27 +286,52 @@ const ROVDashboard = () => {
               </div>
               
               <div className="aspect-video bg-black/50 rounded-lg relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-red-500/10">
+                {/* Background Image based on camera mode */}
+                <div className="absolute inset-0">
+                  {cameraMode === 'normal' && (
+                    <img 
+                      src="/src/images/img-8.jpeg" 
+                      alt="ROV Camera Feed" 
+                      className="w-full h-full object-cover opacity-70"
+                    />
+                  )}
+                  {cameraMode === 'infrared' && (
+                    <img 
+                      src="/src/images/img-5.jpeg" 
+                      alt="Infrared Camera Feed" 
+                      className="w-full h-full object-cover opacity-60 filter hue-rotate-180 contrast-125"
+                    />
+                  )}
+                  {cameraMode === 'lowlight' && (
+                    <img 
+                      src="/src/images/img-4.jpeg" 
+                      alt="Low Light Feed" 
+                      className="w-full h-full object-cover opacity-50 filter brightness-75 contrast-150"
+                    />
+                  )}
+                </div>
+                
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-red-500/20">
                   <div className="absolute inset-4 border border-pink-500/30 rounded">
-                    <div className="absolute top-2 left-2 text-pink-400 text-xs font-mono">
+                    <div className="absolute top-2 left-2 text-pink-400 text-xs font-mono bg-black/50 px-2 py-1 rounded">
                       {cameraMode.toUpperCase()} MODE
                     </div>
-                    <div className="absolute top-2 right-2 text-pink-400 text-xs font-mono">
+                    <div className="absolute top-2 right-2 text-pink-400 text-xs font-mono bg-black/50 px-2 py-1 rounded">
                       REC ●
                     </div>
-                    <div className="absolute bottom-2 left-2 text-pink-400 text-xs font-mono">
+                    <div className="absolute bottom-2 left-2 text-pink-400 text-xs font-mono bg-black/50 px-2 py-1 rounded">
                       ZOOM: 2.5x
                     </div>
-                    <div className="absolute bottom-2 right-2 text-pink-400 text-xs font-mono">
+                    <div className="absolute bottom-2 right-2 text-pink-400 text-xs font-mono bg-black/50 px-2 py-1 rounded">
                       {new Date().toLocaleTimeString()}
                     </div>
                   </div>
                 </div>
                 
                 {/* Crosshair */}
-                <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="relative">
-                    <Target className="w-16 h-16 text-pink-400/30" />
+                    <Target className="w-16 h-16 text-pink-400/50" />
                     <motion.div
                       animate={{
                         scale: [1, 1.1, 1],
@@ -319,7 +344,8 @@ const ROVDashboard = () => {
                       }}
                       className="absolute inset-0"
                     >
-                      <Eye className="w-16 h-16 text-pink-400/50" />
+                      <div className="w-4 h-0.5 bg-pink-400/70 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                      <div className="w-0.5 h-4 bg-pink-400/70 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
                     </motion.div>
                   </div>
                 </div>

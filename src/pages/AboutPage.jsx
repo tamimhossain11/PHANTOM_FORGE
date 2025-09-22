@@ -142,9 +142,19 @@ const AboutPage = () => {
               <p className="text-gray-300 font-display leading-relaxed mb-6">
                 Bangladesh, as the world's largest delta, faces devastating floods every monsoon season. Between 1971 and 2014, 78 major floods claimed over 41,700 lives and caused economic losses of $12.2 billion.
               </p>
-              <p className="text-gray-300 font-display leading-relaxed">
+              <p className="text-gray-300 font-display leading-relaxed mb-6">
                 Each year, floods affect around 6.3 million people, with an average annual economic loss of about $1 billion. We saw this urgent need and decided to act.
               </p>
+              
+              {/* Challenge Image */}
+              <div className="relative rounded-lg overflow-hidden">
+                <img 
+                  src="/src/images/img-10.jpeg" 
+                  alt="Flood Challenge Assessment"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="absolute inset-0 bg-cyan-500/20"></div>
+              </div>
             </motion.div>
 
             <motion.div
@@ -158,9 +168,19 @@ const AboutPage = () => {
               <p className="text-gray-300 font-display leading-relaxed mb-6">
                 Team Phantom Forge developed a comprehensive three-part Smart Flood Management System: Diganta Prohori for aerial surveillance, HydroJan 0.4 for underwater hazard detection, and Dingi for water-based rescue operations.
               </p>
-              <p className="text-gray-300 font-display leading-relaxed">
+              <p className="text-gray-300 font-display leading-relaxed mb-6">
                 Together, these systems aim to save lives, improve rescue efforts, and reduce the long-term impact of floods on communities.
               </p>
+              
+              {/* Solution Image */}
+              <div className="relative rounded-lg overflow-hidden">
+                <img 
+                  src="/src/images/img-12.jpeg" 
+                  alt="Integrated Solution System"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="absolute inset-0 bg-purple-500/20"></div>
+              </div>
             </motion.div>
           </div>
         </motion.section>
@@ -276,6 +296,21 @@ const AboutPage = () => {
             <p className="text-lg text-gray-300 font-display leading-relaxed max-w-4xl mx-auto mb-8">
               Team Phantom Forge represents Dreams of Bangladesh, an organization dedicated to advancing technology and education in our nation. We believe in the power of innovation to solve real-world problems and inspire the next generation.
             </p>
+            
+            {/* Team Photo */}
+            <div className="relative rounded-xl overflow-hidden mb-8 max-w-2xl mx-auto">
+              <img 
+                src="/src/images/img-1.jpeg" 
+                alt="Team Phantom Forge - Dreams of Bangladesh"
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="text-white font-cyber font-bold text-lg">Team Phantom Forge</div>
+                <div className="text-gray-300 font-display text-sm">Innovating for Bangladesh's Future</div>
+              </div>
+            </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="text-center">
                 <div className="text-3xl font-cyber font-bold text-cyber-blue mb-2">100+</div>
@@ -291,6 +326,75 @@ const AboutPage = () => {
               </div>
             </div>
           </motion.div>
+        </motion.section>
+
+        {/* Development Journey */}
+        <motion.section
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <motion.div variants={itemVariants} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-cyber font-bold mb-6 glow-text text-cyber-green">
+              DEVELOPMENT JOURNEY
+            </h2>
+            <p className="text-lg text-gray-300 font-display max-w-3xl mx-auto">
+              From initial concepts to working prototypes - witness our engineering process.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Development Images */}
+            {[
+              { 
+                src: '/src/images/img-9.jpeg', 
+                title: 'Electronics Integration', 
+                description: 'Advanced sensor and control system integration',
+                color: 'border-green-500/30'
+              },
+              { 
+                src: '/src/images/img-11.jpeg', 
+                title: 'Precision Assembly', 
+                description: 'Careful assembly of robotic components',
+                color: 'border-blue-500/30'
+              },
+              { 
+                src: '/src/images/img-2.jpeg', 
+                title: 'Testing Phase', 
+                description: 'Rigorous testing and validation processes',
+                color: 'border-purple-500/30'
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ y: -10, scale: 1.02 }}
+                className={`glass-card rounded-xl overflow-hidden border ${item.color} group`}
+              >
+                <div className="relative aspect-video bg-gray-900/50 overflow-hidden">
+                  <img 
+                    src={item.src} 
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
+                  <div className="absolute top-4 right-4">
+                    <div className="w-3 h-3 bg-green-400 rounded-full status-pulse"></div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-cyber font-bold text-white mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-400 font-display text-sm">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.section>
 
         {/* Call to Action */}
@@ -328,3 +432,4 @@ const AboutPage = () => {
 }
 
 export default AboutPage
+
