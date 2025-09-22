@@ -290,21 +290,21 @@ const ROVDashboard = () => {
                 <div className="absolute inset-0">
                   {cameraMode === 'normal' && (
                     <img 
-                      src="/src/images/img-8.jpeg" 
+                      src="/images/img-8.jpeg" 
                       alt="ROV Camera Feed" 
                       className="w-full h-full object-cover opacity-70"
                     />
                   )}
                   {cameraMode === 'infrared' && (
                     <img 
-                      src="/src/images/img-5.jpeg" 
+                      src="/images/img-5.jpeg" 
                       alt="Infrared Camera Feed" 
                       className="w-full h-full object-cover opacity-60 filter hue-rotate-180 contrast-125"
                     />
                   )}
                   {cameraMode === 'lowlight' && (
                     <img 
-                      src="/src/images/img-4.jpeg" 
+                      src="/images/img-4.jpeg" 
                       alt="Low Light Feed" 
                       className="w-full h-full object-cover opacity-50 filter brightness-75 contrast-150"
                     />

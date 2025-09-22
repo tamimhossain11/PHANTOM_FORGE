@@ -149,7 +149,7 @@ const AboutPage = () => {
               {/* Challenge Image */}
               <div className="relative rounded-lg overflow-hidden">
                 <img 
-                  src="/src/images/img-10.jpeg" 
+                  src="/images/img-10.jpeg" 
                   alt="Flood Challenge Assessment"
                   className="w-full h-48 object-cover"
                 />
@@ -175,7 +175,7 @@ const AboutPage = () => {
               {/* Solution Image */}
               <div className="relative rounded-lg overflow-hidden">
                 <img 
-                  src="/src/images/img-12.jpeg" 
+                  src="/images/img-12.jpeg" 
                   alt="Integrated Solution System"
                   className="w-full h-48 object-cover"
                 />
@@ -300,7 +300,7 @@ const AboutPage = () => {
             {/* Team Photo */}
             <div className="relative rounded-xl overflow-hidden mb-8 max-w-2xl mx-auto">
               <img 
-                src="/src/images/img-1.jpeg" 
+                src="/images/img-1.jpeg" 
                 alt="Team Phantom Forge - Dreams of Bangladesh"
                 className="w-full h-64 object-cover"
               />
@@ -349,19 +349,19 @@ const AboutPage = () => {
             {/* Development Images */}
             {[
               { 
-                src: '/src/images/img-9.jpeg', 
+                src: '/images/img-9.jpeg', 
                 title: 'Electronics Integration', 
                 description: 'Advanced sensor and control system integration',
                 color: 'border-green-500/30'
               },
               { 
-                src: '/src/images/img-11.jpeg', 
+                src: '/images/img-11.jpeg', 
                 title: 'Precision Assembly', 
                 description: 'Careful assembly of robotic components',
                 color: 'border-blue-500/30'
               },
               { 
-                src: '/src/images/img-2.jpeg', 
+                src: '/images/img-2.jpeg', 
                 title: 'Testing Phase', 
                 description: 'Rigorous testing and validation processes',
                 color: 'border-purple-500/30'

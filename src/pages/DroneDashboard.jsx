@@ -313,21 +313,21 @@ const DroneDashboard = () => {
                 <div className="absolute inset-0">
                   {cameraMode === 'normal' && (
                     <img 
-                      src="/src/images/img-6.jpeg" 
+                      src="/images/img-6.jpeg" 
                       alt="Drone Camera Feed" 
                       className="w-full h-full object-cover opacity-70"
                     />
                   )}
                   {cameraMode === 'thermal' && (
                     <img 
-                      src="/src/images/img-10.jpeg" 
+                      src="/images/img-10.jpeg" 
                       alt="Thermal Camera Feed" 
                       className="w-full h-full object-cover opacity-60 filter hue-rotate-180"
                     />
                   )}
                   {cameraMode === 'night' && (
                     <img 
-                      src="/src/images/img-11.jpeg" 
+                      src="/images/img-11.jpeg" 
                       alt="Night Vision Feed" 
                       className="w-full h-full object-cover opacity-50 filter grayscale contrast-125"
                     />

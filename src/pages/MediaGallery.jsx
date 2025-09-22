@@ -31,8 +31,8 @@ const MediaGallery = () => {
     {
       id: 'vid-1',
       type: 'video',
-      src: '/src/images/vid-1.mp4',
-      thumbnail: '/src/images/img-1.jpeg',
+      src: '/images/vid-1.mp4',
+      thumbnail: '/images/img-1.jpeg',
       title: 'Drone Assembly Lab Session',
       description: 'Team working on Diganta Prohori drone assembly and calibration in the lab',
       category: 'lab-session',
@@ -43,8 +43,8 @@ const MediaGallery = () => {
     {
       id: 'vid-2',
       type: 'video',
-      src: '/src/images/vid-2.mp4',
-      thumbnail: '/src/images/img-2.jpeg',
+      src: '/images/vid-2.mp4',
+      thumbnail: '/images/img-2.jpeg',
       title: 'AUV Development Session',
       description: 'HydroJan 0.4 underwater vehicle development and testing preparations',
       category: 'lab-session',
@@ -55,8 +55,8 @@ const MediaGallery = () => {
     {
       id: 'vid-3',
       type: 'video',
-      src: '/src/images/vid-3.mp4',
-      thumbnail: '/src/images/img-3.jpeg',
+      src: '/images/vid-3.mp4',
+      thumbnail: '/images/img-3.jpeg',
       title: 'ROV Calibration Workshop',
       description: 'Dingi rescue robot calibration and control system testing',
       category: 'lab-session',
@@ -69,8 +69,8 @@ const MediaGallery = () => {
     {
       id: 'vid-4',
       type: 'video',
-      src: '/src/images/vid-4.mp4',
-      thumbnail: '/src/images/img-4.jpeg',
+      src: '/images/vid-4.mp4',
+      thumbnail: '/images/img-4.jpeg',
       title: 'Drone Flight Test',
       description: 'Diganta Prohori autonomous flight testing and navigation system validation',
       category: 'test-videos',
@@ -81,8 +81,8 @@ const MediaGallery = () => {
     {
       id: 'vid-5',
       type: 'video',
-      src: '/src/images/vid-5.mp4',
-      thumbnail: '/src/images/img-5.jpeg',
+      src: '/images/vid-5.mp4',
+      thumbnail: '/images/img-5.jpeg',
       title: 'Water Tank AUV Test',
       description: 'HydroJan 0.4 underwater navigation and hazard detection testing',
       category: 'test-videos',
@@ -95,7 +95,7 @@ const MediaGallery = () => {
     {
       id: 'img-1',
       type: 'image',
-      src: '/src/images/img-1.jpeg',
+      src: '/images/img-1.jpeg',
       title: 'Team Phantom Forge',
       description: 'The complete team behind the Smart Flood Management System',
       category: 'team',
@@ -106,7 +106,7 @@ const MediaGallery = () => {
     {
       id: 'img-6',
       type: 'image',
-      src: '/src/images/img-6.jpeg',
+      src: '/images/img-6.jpeg',
       title: 'Diganta Prohori - Surveillance Drone',
       description: 'Complete assembled drone with hexacopter frame and Pixhawk controller',
       category: 'robots',
@@ -117,7 +117,7 @@ const MediaGallery = () => {
     {
       id: 'img-7',
       type: 'image',
-      src: '/src/images/img-7.jpeg',
+      src: '/images/img-7.jpeg',
       title: 'HydroJan 0.4 - AUV System',
       description: 'Autonomous underwater vehicle with capsule hull design',
       category: 'robots',
@@ -128,7 +128,7 @@ const MediaGallery = () => {
     {
       id: 'img-8',
       type: 'image',
-      src: '/src/images/img-8.jpeg',
+      src: '/images/img-8.jpeg',
       title: 'Dingi - Rescue Robot',
       description: 'Water-floating rescue robot with manipulator arm',
       category: 'robots',
@@ -139,7 +139,7 @@ const MediaGallery = () => {
     {
       id: 'img-9',
       type: 'image',
-      src: '/src/images/img-9.jpeg',
+      src: '/images/img-9.jpeg',
       title: 'Electronics Integration',
       description: 'Advanced control systems and sensor integration process',
       category: 'development',
@@ -150,7 +150,7 @@ const MediaGallery = () => {
     {
       id: 'img-10',
       type: 'image',
-      src: '/src/images/img-10.jpeg',
+      src: '/images/img-10.jpeg',
       title: 'Testing Environment Setup',
       description: 'Controlled testing environment for robot validation',
       category: 'testing',
@@ -161,7 +161,7 @@ const MediaGallery = () => {
     {
       id: 'img-11',
       type: 'image',
-      src: '/src/images/img-11.jpeg',
+      src: '/images/img-11.jpeg',
       title: 'Component Assembly',
       description: 'Precision assembly of robotic components and systems',
       category: 'development',
@@ -172,7 +172,7 @@ const MediaGallery = () => {
     {
       id: 'img-12',
       type: 'image',
-      src: '/src/images/img-12.jpeg',
+      src: '/images/img-12.jpeg',
       title: 'Final System Integration',
       description: 'Complete system integration and final testing phase',
       category: 'testing',

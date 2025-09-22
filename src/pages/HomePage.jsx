@@ -353,11 +353,11 @@ const HomePage = () => {
               <div className="relative aspect-video bg-gray-900/50 overflow-hidden">
                 <video 
                   className="w-full h-full object-cover transition-transform group-hover:scale-105"
-                  poster="/src/images/img-1.jpeg"
+                  poster="/images/img-1.jpeg"
                   controls
                   muted
                 >
-                  <source src="/src/images/vid-1.mp4" type="video/mp4" />
+                  <source src="/images/vid-1.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors pointer-events-none" />
@@ -389,7 +389,7 @@ const HomePage = () => {
               <div className="glass-card rounded-xl overflow-hidden border border-purple-500/30 group">
                 <div className="relative aspect-square bg-gray-900/50 overflow-hidden">
                   <img 
-                    src="/src/images/img-6.jpeg" 
+                    src="/images/img-6.jpeg" 
                     alt="Diganta Prohori Drone"
                     className="w-full h-full object-cover transition-transform group-hover:scale-110"
                   />
@@ -404,7 +404,7 @@ const HomePage = () => {
               <div className="glass-card rounded-xl overflow-hidden border border-indigo-500/30 group">
                 <div className="relative aspect-square bg-gray-900/50 overflow-hidden">
                   <img 
-                    src="/src/images/img-7.jpeg" 
+                    src="/images/img-7.jpeg" 
                     alt="HydroJan 0.4 AUV"
                     className="w-full h-full object-cover transition-transform group-hover:scale-110"
                   />

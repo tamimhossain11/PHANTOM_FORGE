@@ -272,21 +272,21 @@ const AUVDashboard = () => {
                 <div className="absolute inset-0">
                   {sonarMode === 'mapping' && (
                     <img 
-                      src="/src/images/img-7.jpeg" 
+                      src="/images/img-7.jpeg" 
                       alt="AUV Sonar Mapping" 
                       className="w-full h-full object-cover opacity-40 filter blur-sm"
                     />
                   )}
                   {sonarMode === 'obstacle' && (
                     <img 
-                      src="/src/images/img-12.jpeg" 
+                      src="/images/img-12.jpeg" 
                       alt="Obstacle Detection" 
                       className="w-full h-full object-cover opacity-50 filter sepia"
                     />
                   )}
                   {sonarMode === 'fish' && (
                     <img 
-                      src="/src/images/img-9.jpeg" 
+                      src="/images/img-9.jpeg" 
                       alt="Marine Life Detection" 
                       className="w-full h-full object-cover opacity-45 filter hue-rotate-90"
                     />
